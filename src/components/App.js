@@ -1,11 +1,15 @@
-import Content from "./Content";
-import NavBar from "./NavBar";
+import Body from './Body';
+import NavBar from './NavBar';
 
 export default function App() {
-    return (
-        <div>
-            <NavBar />
-            <Content />
-        </div>
-    )
+  return (
+    <>
+      <div class='navbar'>
+        <NavBar />
+      </div>
+      <div class='corpo'>
+        <Body />
+      </div>
+    </>
+  )
 }

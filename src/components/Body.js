@@ -4,14 +4,12 @@ import SideBar from './SideBar';
 
 export default function Body() {
   return (
-    <div>
+    <div class='corpo'>
       <div class='esquerda'>
         <Stories />
         <Posts />
       </div>
-      <div class='sidebar'>
         <SideBar />
-      </div>
     </div>    
   )
 }

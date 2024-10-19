@@ -1,15 +1,13 @@
 import Body from './Body';
 import NavBar from './NavBar';
+import Footer from './Footer';
 
 export default function App() {
   return (
     <>
-      <div class='navbar'>
-        <NavBar />
-      </div>
-      <div class='corpo'>
-        <Body />
-      </div>
+      <NavBar />
+      <Body />
+      <Footer />
     </>
   )
 }

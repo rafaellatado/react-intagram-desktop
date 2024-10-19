@@ -3,9 +3,9 @@ import Suggestions from './Suggestions';
 
 export default function SideBar() {
   return (
-    <>
+    <div class='sidebar'>
       <User />
       <Suggestions />
-    </>
+    </div>
   )
 }

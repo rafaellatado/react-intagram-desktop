@@ -1,11 +1,33 @@
-export default function Posts() {
+import { useState } from "react"
+
+export default function Posts(props) {
+
+  const [isSaved, setIsSaved] = useState(false);
+  const [isLiked, setIsLiked] = useState(false);
+
+  const handleIsSaved = () => {
+    setIsSaved(!isSaved);
+  }
+
+  const handleLike = () => {
+    setIsLiked(!isLiked);
+  }
+
+  const handleLikeImg = () => {
+    if (isLiked === true) {
+      return;
+    } else {
+      setIsLiked(true);
+    }
+  }
+
   return (
     <>
       <div class="post">
         <div class="topo">
           <div class="usuario">
-            <img src="assets/img/meowed.svg" alt="meowed"/>
-            meowed
+            <img src={props.userImg} alt=""/>
+            {props.userName}
           </div>
           <div class="acoes">
             <ion-icon name="ellipsis-horizontal"></ion-icon>
@@ -13,61 +35,35 @@ export default function Posts() {
         </div>
 
         <div class="conteudo">
-          <img src="assets/img/gato-telefone.svg" alt="gato-telefone"/>
+          <img 
+            src={props.postImg} 
+            onClick={handleLikeImg}
+            alt=""
+          />
         </div>
 
         <div class="fundo">
           <div class="acoes">
             <div>
-              <ion-icon name="heart-outline"></ion-icon>
+              <ion-icon 
+                onClick={handleLike} 
+                name={isLiked ? 'heart' : 'heart-outline'}
+                style={{color: isLiked ? 'red' : 'black'}}>
+              </ion-icon>
               <ion-icon name="chatbubble-outline"></ion-icon>
               <ion-icon name="paper-plane-outline"></ion-icon>
             </div>
             <div>
-              <ion-icon name="bookmark-outline"></ion-icon>
+              <ion-icon onClick={handleIsSaved} name={isSaved ? 'bookmark' : 'bookmark-outline'}></ion-icon>
             </div>
           </div>
 
           <div class="curtidas">
-            <img src="assets/img/respondeai.svg" alt="respondeai"/>
+            <img src={props.likeImg} alt=""/>
             <div class="texto">
-              Curtido por <strong>respondeai</strong> e <strong>outras 101.523 pessoas</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="post">
-        <div class="topo">
-          <div class="usuario">
-            <img src="assets/img/barked.svg" alt="barked"/>
-            barked
-          </div>
-          <div class="acoes">
-            <ion-icon name="ellipsis-horizontal"></ion-icon>
-          </div>
-        </div>
-
-        <div class="conteudo">
-          <img src="assets/img/dog.svg" alt="dog" />
-        </div>
-
-        <div class="fundo">
-          <div class="acoes">
-            <div>
-              <ion-icon name="heart-outline"></ion-icon>
-              <ion-icon name="chatbubble-outline"></ion-icon>
-              <ion-icon name="paper-plane-outline"></ion-icon>
-            </div>
-            <div>
-              <ion-icon name="bookmark-outline"></ion-icon>
-            </div>
-          </div>
-
-          <div class="curtidas">
-            <img src="assets/img/adorable_animals.svg" alt="adorable_animals"/>
-            <div class="texto">
-              Curtido por <strong>adorable_animals</strong> e <strong>outras 99.159 pessoas</strong>
+              Curtido por <strong>{props.likeUserName}</strong> e <strong>outras 
+                {isLiked ? props.likeNumber + 1 : props.likeNumber} 
+                pessoas</strong>
             </div>
           </div>
         </div>

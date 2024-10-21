@@ -21,7 +21,7 @@ export default function Stories() {
   }]
 
   return (
-    <div class='stories'>
+    <div className='stories'>
       {storiesArr.map(s => <Story key={s.userName} userImg={s.userImg} userName={s.userName} />)}
     </div>
   )

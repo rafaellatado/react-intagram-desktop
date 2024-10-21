@@ -23,18 +23,18 @@ export default function Posts(props) {
 
   return (
     <>
-      <div class="post">
-        <div class="topo">
-          <div class="usuario">
+      <div className="post">
+        <div className="topo">
+          <div className="usuario">
             <img src={props.userImg} alt=""/>
             {props.userName}
           </div>
-          <div class="acoes">
+          <div className="acoes">
             <ion-icon name="ellipsis-horizontal"></ion-icon>
           </div>
         </div>
 
-        <div class="conteudo">
+        <div className="conteudo">
           <img 
             src={props.postImg} 
             onClick={handleLikeImg}
@@ -42,8 +42,8 @@ export default function Posts(props) {
           />
         </div>
 
-        <div class="fundo">
-          <div class="acoes">
+        <div className="fundo">
+          <div className="acoes">
             <div>
               <ion-icon 
                 onClick={handleLike} 
@@ -58,12 +58,10 @@ export default function Posts(props) {
             </div>
           </div>
 
-          <div class="curtidas">
+          <div className="curtidas">
             <img src={props.likeImg} alt=""/>
-            <div class="texto">
-              Curtido por <strong>{props.likeUserName}</strong> e <strong>outras 
-                {isLiked ? props.likeNumber + 1 : props.likeNumber} 
-                pessoas</strong>
+            <div className="texto">
+              Curtido por <strong>{props.likeUserName}</strong> e <strong>outras {isLiked ? props.likeNumber + 1 : props.likeNumber} pessoas</strong>
             </div>
           </div>
         </div>

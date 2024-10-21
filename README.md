@@ -1,3 +1,7 @@
+# React Instagram for Desktop
+
+You can view the Parrot Card Game App live at <a href="https://rafaellatado.github.io/react-intagram-desktop/" target="_blank">https://rafaellatado.github.io/react-intagram-desktop/</a>.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
